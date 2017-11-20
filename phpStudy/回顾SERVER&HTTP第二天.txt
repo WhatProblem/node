@@ -1,0 +1,89 @@
+回顾SERVER&HTTP第二天:
+ * PHP语言
+   * PHP - 类似于javascript语言
+     * javascript是客户端的脚本语言
+     * PHP是服务器端的脚本语言
+   * PHP文件的扩展名为".php"
+   * 第一个PHP文件
+     * 创建PHP文件 - 扩展名为".php"
+     * 编写PHP代码时
+       * 是以"<?php"开始,是以"?>"结束
+ * PHP基础语法
+   * 常量与变量
+     * 常量 - 定义后值不变(不允许重复赋值)
+       * const 常量名 = 常量值;
+       * define(常量名,常量值);
+     * 变量
+       $变量名=值;
+   * 数据类型
+     * 四种标量类型
+       * boolean - true|false
+         * true响应给客户端页面 - 1
+	 * false响应给客户端页面 - ''
+       * integer - 整型
+       * float/double - 浮点型
+       * string - 字符串
+         * '' - 定义固定内容的字符串
+	   * 性能相对高
+	 * "" - 识别变量名称
+     * 两种复合类型
+       * array - 数组
+         var arr1 = [];
+	 var arr2 = array(key=>value,key=>value)
+       * object - 对象
+         class 类名{}
+	 var 对象 = new 类名;
+     * 两种特殊类型
+       * resource - 资源类型
+       * NULL
+   * 运算符
+     * PHP中的大部分运算符的使用方式与javascript中的元素符类似
+     * 字符串的连接符 - "."
+   * 循环结构
+     * while
+     * do...while
+     * for
+     * foreach - 类似于javascript中的forin
+   * 分支结构
+     * if...else
+     * switch...case
+   * break与continue的区别
+ * PHP预定义
+   * 预定义变量
+     * $_GET - GET方式的请求数据
+     * $_POST - POST方式的请求数据
+     * $_REQUEST
+     * $_FILES
+     * $_COOKIES
+   * 预定义函数
+     * 数据库相关扩展内容
+ * PHP连接MySQL数据库
+   * 准备工作
+     * PHP_HOME/ext目录 - php_mysql.dll和php_mysqli.dll
+     * php.ini主配置文件 - 配置相关数据库库文件
+   * 连接MySQL数据库的步骤
+     * 与MySQL数据库建立连接
+       mysqli_conntect(host,username,passwd,dbname,port)
+       * host - MySQL数据库所在电脑的IP地址
+       * username - 登录MySQL数据库的用户名
+       * passwd - 登录MySQL数据库的密码
+       * dbname - 登录的数据库名称
+       * port - MySQL数据库的端口号
+       * 该方法返回MySQL数据库的连接对象$conn
+     * 定义SQL语句
+       * 在PHP代码定义SQL语句 - 字符串
+       * 如果SQL语句中涉及字符串类型的话,记得加''
+     * 将SQL语句发送到MySQL数据库执行
+       mysqli_query(link,sql)
+       * link - 与MySQL数据库的连接对象
+       * sql - 定义的SQL语句
+     * 如果执行的是SELECT语句的话,返回结果集对象
+       * 类型为mysqli_result类型
+       * 属性
+         * num_rows - 记录数
+	 * field_count - 字段数
+       * 方法
+         * mysqli_fetch_array()
+	 * mysqli_fetch_object()
+     * 关闭与MySQL数据库的连接
+       mysqli_close(link);
