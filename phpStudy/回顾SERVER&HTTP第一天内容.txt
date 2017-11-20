@@ -1,0 +1,67 @@
+回顾SERVER&HTTP第一天内容:
+ * 基本概念
+   * 服务器
+     * 硬件服务器 - PC机/小型机等
+     * 软件服务器 - 中间件(运行Web应用的软件)
+   * Web架构
+     * C/S架构 - Client(客户端)/Server(服务器端)
+     * B/S架构 - Browser(浏览器)/Server(服务器端)
+   * XAMPP软件
+     * Apache - 运行PHP的服务器
+     * Tomcat - 运行Java的服务器
+     * MySQL - 数据库产品
+   * 数据库
+     * 数据库 - 数据仓库,用于存储或操作数据
+     * 关系型数据库 - 简单来说,就是表(行和列)
+       * Oracle
+       * MySQL
+     * NoSQL - 非关系型数据库
+   * SQL语言 - 应用在各种数据库产品中
+     * DDL - 数据定义语言(数据库|表)
+     * DCL - 数据控制语言
+     * DML - 数据操作语言(增删改)
+     * DQL - 数据查询语言(查)
+ * DDL - CREATE|ALTER|DROP
+   * 数据库
+     * 创建数据库 - CREATE DATABASE 数据库名称
+     * 查看数据库 - SHOW DATABASES
+     * 修改数据库 - ALTER DATABASE 数据库名称 修改内容
+     * 删除数据库 - DROP DATABASE 数据库名称
+     * 使用(切换)数据库 - USE 数据库名称
+   * 数据表
+     * 数据类型
+       * 数值(Number)类型
+         * INT - 整型
+	 * FLOAT/DOUBLE - 浮点型
+	 * DECIMAL - 精确值
+       * 日期(Date)类型
+         * DATE - 日期(yyyy-MM-dd)
+	 * DATETIME - 日期/时间(yyyy-MM-dd hh:mm:ss)
+	 * TIMESTAMP - 时间戳(yyyy-MM-dd hh:mm:ss)
+       * 字符串(String)类型
+         * CHAR - 长度固定的字符串
+	 * VARCHAR - 长度可变的字符串
+     * 创建数据表
+       CREATE TABLE 表名(
+          字段名1  数据类型,
+	  字段名2  数据类型,
+	  ...
+       )
+       * 为字段增加约束
+         * 主键约束 - PRIMARY KEY
+	 * 主键自增约束 - AUTO_INCREMENT
+     * 修改数据表
+     * 删除数据表 - DROP TABLE 表名
+ * DML - INSERT|UPDATE|DELETE
+   * 插入(新增)数据
+     INSERT INTO 表名(字段名1,字段名2,..) VALUES(字段值1,字段值2,...)
+     INSERT INTO 表名 VALUES(所有字段值)
+   * 更新(修改)数据
+     UPDATE 表名 SET 字段名1=字段值1,字段名2=字段值2 WHERE 条件
+   * 删除数据
+     * 物理删除 - DELETE FROM 表名 WHERE 条件
+     * 逻辑删除 - 实际并没有执行删除操作
+       * 增加一个字段,作为一个标识(是否为删除)
+       * 通过修改标识的值,在逻辑上表示删除
+ * DQL
+   SELECT * FROM 表名 WHERE 条件 ORDER BY 字段名
